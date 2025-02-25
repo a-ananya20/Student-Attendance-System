@@ -55,9 +55,9 @@ python manage.py runserver
 
 
 ### Admin Login
-![Admin Login](Images/admin_login.png)
+![Admin Login](Images/admin login.png)
 
 ### Faculty Login
-![Faculty Login](Images/faculty_login.png)
+![Faculty Login](Images/faculty login.png)
 
 
