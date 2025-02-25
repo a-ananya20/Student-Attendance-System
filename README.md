@@ -23,7 +23,6 @@ Tech Stack
 - **Database**: MariaDB
 - **Version Control**: Git, GitHub
 
-Installation & Setup
 
 # Clone the repository
 git clone https://github.com/your-username/student-attendance-system.git
@@ -47,5 +46,18 @@ python manage.py createsuperuser
 
 # Run the development server
 python manage.py runserver
+
+
+## Screenshots
+
+### Home 
+![Home](Images/homepage.png)
+
+
+### Admin Login
+![Admin Login](Images/admin_login.png)
+
+### Faculty Login
+![Faculty Login](Images/faculty_login.png)
 
 
