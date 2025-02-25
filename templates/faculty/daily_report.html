@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}Daily Reports{% endblock %}
+
+{% block content %}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <section class="daily-reports">
+<h2>Daily Reports</h2>
+<p>Attendance records for a specific day:</p>
+<form method="GET" action="{% url 'daily_report' %}">
+    <label for="date">Date:</label>
+    <input type="date" name="date" value="{{ date }}" required>
+
+    <label for="year">Year:</label>
+    <select name="year">
+        <option value="">--Select Year--</option>
+        <option value="1" {% if year_filter == '1' %}selected{% endif %}>1</option>
+        <option value="2" {% if year_filter == '2' %}selected{% endif %}>2</option>
+        <option value="3" {% if year_filter == '3' %}selected{% endif %}>3</option>
+        <option value="4" {% if year_filter == '4' %}selected{% endif %}>4</option>
+    </select>
+
+    <label for="semester">Semester:</label>
+    <select name="semester">
+        <option value="">--Select Semester--</option>
+        <option value="1" {% if semester_filter == '1' %}selected{% endif %}>1</option>
+        <option value="2" {% if semester_filter == '2' %}selected{% endif %}>2</option>
+    </select>
+
+    <button type="submit" class="btn filter-btn">Apply Filter</button>
+</form>
+
+<form method="GET" action="{% url 'daily_report' %}" class="download-form">
+    <input type="hidden" name="date" value="{{ date }}">
+    <input type="hidden" name="year" value="{{ year_filter }}">
+    <input type="hidden" name="semester" value="{{ semester_filter }}">
+    <a href="{% url 'reports' %}" class="btn back-btn">Back to Report Selection</a>
+    <label>
+        <input type="radio" name="file_type" value="excel" required> Excel
+    </label>
+    <label>
+        <input type="radio" name="file_type" value="pdf" required> PDF
+    </label>
+
+    <button type="submit" name="download" value="true" class="btn download-btn">Download</button>
+</form>
+
+<table class="report-table">
+    <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Year</th>
+            <th>Semester</th>
+            <th>Attendance Percentage</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for report in reports %}
+        <tr>
+            <td>{{ report.student__name }}</td>
+            <td>{{ report.student__year }}</td>
+            <td>{{ report.student__semester }}</td>
+            <td>{{ report.attendance_percentage|floatformat:2 }}%</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</section>
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Take Attendance{% endblock %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<button onclick="goBack()" class="back-button">← Back</button>
+
+<section class="take_attendance">
+    <h2>Take Attendance</h2>
+    <form method="POST" action="{% url 'take_attendance' %}">
+        {% csrf_token %}
+        
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" value="{{ today_date }}" required>
+
+        <!-- Subject Dropdown -->
+        <label for="subject">Subject:</label>
+        <select id="subject" name="subject" required>
+            <option value="">Select Subject</option>
+            {% for subject in subjects %}
+            <option value="{{ subject.id }}">
+                {{ subject.name }} (Year: {{ subject.year }}, Semester: {{ subject.semester }})
+            </option>
+            {% endfor %}
+        </select>
+
+        <label for="period">Period:</label>
+        <select name="period" id="period" required>
+            <option value="">Select Period</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+
+        <button type="submit">Mark Attendance</button>
+    </form>
+</section>
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

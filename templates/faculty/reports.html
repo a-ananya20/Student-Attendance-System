@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}View Reports{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<button class="back-button">
+    <a href="{% url 'faculty_dashboard' %}"> ← Back</button>
+<section class="view-reports">
+
+    <h2>Reports</h2>
+    <div class="view-container">
+        <!-- Subject-Wise Reports -->
+        <a href="{% url 'subject_wise_reports' %}" class="box report-box">
+            <div class="box-content">
+                <img src="{% static 'images/subjectwisereports.png' %}" alt="Subject Wise Reports">
+                <p>Subject-Wise Reports</p>
+            </div>
+        </a>
+
+        <!-- Student-Wise Reports -->
+        <a href="{% url 'student_wise_reports' %}" class="box report-box">
+            <div class="box-content">
+                <img src="{% static 'images/studentwisereports.png' %}" alt="Student Wise Reports">
+                <p>Student-Wise Reports</p>
+            </div>
+        </a>
+
+        <!-- Daily Reports -->
+        <a href="{% url 'daily_report' %}" class="box report-box">
+            <div class="box-content">
+                <img src="{% static 'images/dailyreports.png' %}" alt="Daily Reports">
+                <p>Daily Reports</p>
+            </div>
+        </a>
+
+        <!-- Low Attendance Reports -->
+        <a href="{% url 'low_attendance_reports' %}" class="box report-box">
+            <div class="box-content">
+                <img src="{% static 'images/lowattendancereports.png' %}" alt="Low Attendance Reports">
+                <p>Low Attendance Reports</p>
+            </div>
+        </a>
+    </div>
+</section>
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,51 @@
+<!-- templates/attendance/subjectwise_reports.html -->
+{% extends 'base.html' %}
+
+{% block title %}Subject-Wise Reports{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<section class="subject-reports">
+    <h2>Subject-Wise Reports</h2>
+    
+
+     <!-- Download Form -->
+    <form method="GET" action="{% url 'subject_wise_reports' %}" class="download-form">
+        <input type="hidden" name="year" value="{{ year_filter }}">
+        <input type="hidden" name="semester" value="{{ semester_filter }}">
+        
+            <a href="{% url 'reports' %}" class="btn back-btn">Back to Report Selection</a>
+      
+        <label>
+            <input type="radio" name="file_type" value="excel" required> Excel
+        </label>
+        <label>
+            <input type="radio" name="file_type" value="pdf" required> PDF
+        </label>
+
+        <button type="submit" name="download" value="true" class="btn download-btn">Download</button>
+    </form>
+
+    <!-- Subject-Wise Report Table -->
+    <table class="report-table">
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Attendance Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for report in reports %}
+            <tr>
+                <td>{{ report.subject__name }}</td>
+                <td>{{ report.attendance_percentage|floatformat:2 }}%</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>  
+</section>
+
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

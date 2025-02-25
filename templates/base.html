@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Student Attendance System{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Student Attendance System</h1>
+        <nav>
+            <a href="/faculty/logout">Logout</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        <div class="container">
+            <a href="/admin/login" class="box admin-box">
+                <div class="box-content">
+                    <img src="{% static 'images/adminlogin.png' %}" alt="Admin Icon">
+                    <p>Admin Login</p>
+                </div>
+            </a>
+            <a href="/faculty/faculty_login" class="box faculty-box">
+                <div class="box-content">
+                    <img src="{% static 'images/facultylogin.png' %}" alt="Faculty Icon">
+                    <p>Faculty Login</p>
+                </div>
+            </a>
+        </div>
+        {% endblock %}
+    </main>
+    <footer>
+        <p>© 2024 Student Attendance System. All rights reserved.</p>
+    </footer>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
+

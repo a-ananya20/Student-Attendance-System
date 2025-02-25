@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}Student-Wise Reports{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<section class="subject-reports">
+    <h2>Student-Wise Reports</h2>
+
+    <!-- Filter Form -->
+    <form method="GET" action="" class="filter-form">
+        <label for="year">Year:</label>
+        <select name="year">
+            <option value="">--Select Year--</option>
+            <option value="1" {% if year_filter == '1' %}selected{% endif %}>1</option>
+            <option value="2" {% if year_filter == '2' %}selected{% endif %}>2</option>
+            <option value="3" {% if year_filter == '3' %}selected{% endif %}>3</option>
+            <option value="4" {% if year_filter == '4' %}selected{% endif %}>4</option>
+        </select>
+    
+        <label for="semester">Semester:</label>
+        <select name="semester">
+            <option value="">--Select Semester--</option>
+            <option value="1" {% if semester_filter == '1' %}selected{% endif %}>1</option>
+            <option value="2" {% if semester_filter == '2' %}selected{% endif %}>2</option>
+        </select>
+    
+        <button type="submit" class="btn filter-btn">Apply Filter</button>
+    </form>
+    <div class="buttons">
+        <a href="{% url 'reports' %}" class="btn back-btn">Back to Report Selection</a>
+
+        <!-- Download form -->
+        <form method="GET" action="{% url 'student_wise_reports' %}" class="download-form">
+            <label>
+                <input type="radio" name="file_type" value="excel" required> Excel
+            </label>
+            <label>
+                <input type="radio" name="file_type" value="pdf" required> PDF
+            </label>
+            <!-- Include current filter parameters in the download request -->
+            <input type="hidden" name="year" value="{{ year }}">
+            <input type="hidden" name="semester" value="{{ semester }}">
+            <button type="submit" name="download" value="true" class="btn download-btn">Download</button>
+        </form>
+        
+        
+    </div>
+    <table class="report-table">
+        <thead>
+            <tr>
+                <th>Student</th>
+                <th>Attendance Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for report in reports %}
+            <tr>
+                <td>{{ report.student__name }}</td>
+                <td>{{ report.attendance_percentage|floatformat:2 }}%</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    
+</section>
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Attendance Saved{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <section class="attendance-saved">
+        <h2>Attendance Successfully Saved</h2>
+
+        <p>Your attendance data for the following has been successfully saved:</p>
+        <ul>
+            <li><strong>Year:</strong> {{ year }}</li>
+            <li><strong>Semester:</strong> {{ semester }}</li>
+            <li><strong>Subject:</strong> {{ subject.name }}</li>
+            <li><strong>Period:</strong> {{ period }}</li>
+        </ul>
+
+        <p>If you would like to view attendance reports, you can go to the reports page:</p>
+        <a href="{% url 'reports' %}" class="btn">Go to Reports</a>
+
+        <br><br>
+        <a href="{% url 'take_attendance' %}" class="btn">Go Back to Take Attendance</a>
+    </section>
+    <script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,700 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f6f7;
+}
+
+header {
+    text-align: center;
+    padding: 30px;
+    background-color: #023047;
+    color: white;
+    font-size: 30px;
+}
+header nav a{
+    text-decoration: none;
+    font-size: 20px;
+    position: fixed;
+    right: 10px;
+    top: 170px;
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #343a40;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin: 50px auto;
+}
+
+.box {
+    text-decoration: none;
+    color: white;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.box-content {
+    text-align: center;
+    font-size: 20px;
+}
+
+.box p {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.admin-box {
+    background-color: #219ebc; /* Blue color */
+}
+
+.faculty-box {
+    background-color: #219ebc; /* Teal color */
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+main {
+    padding: 2rem;
+}
+
+
+/* FACULTY LOGIN PAGE STYLES */
+/* Container for the login image and form */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: 10px;
+}
+
+
+/* Styling for the login form container */
+.login-container {
+    flex: 1;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    text-align: center;
+}
+
+/* Heading styling */
+.login-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form styling */
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Input field styling */
+.login-container label {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Placeholder styling */
+.login-container input::placeholder {
+    color: #aaa;
+}
+
+/* Submit button styling */
+.login-container button {
+    padding: 12px 20px;
+    background-color: #219ebc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 80%;
+}
+
+.login-container button:hover {
+    background-color: #219ebc;
+}
+
+/* Error message styling */
+.errors {
+    margin-top: 10px;
+    color: red;
+    font-size: 0.9rem;
+}
+
+
+/* FACULTY DASBOARD STYLES */
+.faculty-action-box {
+    background-color: #219ebc; /* Blue color */
+}
+
+.faculty-action-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* TAKE ATTENDANCE STYLES */
+/* Container styling for the entire attendance section */
+.take_attendance {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.take_attendance h2 {
+    text-align: center;
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+.take_attendance form {
+    display: grid;
+    gap: 20px;
+}
+
+/* Label styling */
+.take_attendance label {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Input and Select field styling */
+.take_attendance input,
+.take_attendance select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Focus effect on input fields */
+.take_attendance input:focus,
+.take_attendance select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Button styling */
+.take_attendance button {
+    padding: 12px;
+    background-color: #219ebc;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.take_attendance button:hover {
+    background-color: #219ebc;
+}
+
+/* Styling for the subject display section */
+#subject-display {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Media query for responsiveness on smaller screens */
+@media (max-width: 768px) {
+    .take_attendance {
+        padding: 15px;
+    }
+    .take_attendance h2 {
+        font-size: 1.5rem;
+    }
+    .take_attendance form {
+        gap: 15px;
+    }
+    .take_attendance button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+
+
+/* MARK ATTENDANCE STYLES */
+/* Container for the entire attendance form */
+.attendance-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.attendance-container h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Table styling */
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.attendance-table th,
+.attendance-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.attendance-table th {
+    background-color: #219ebc;
+    color: white;
+    font-weight: bold;
+}
+
+.attendance-table td {
+    background-color: #f9f9f9;
+}
+
+/* Radio button label styling */
+.attendance-table td label {
+    margin-right: 20px;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Submit button styling */
+.submit-btn {
+    display: block;
+    width: 200px;
+    padding: 12px;
+    margin: 0 auto;
+    background-color: #28a745;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Submit button hover effect */
+.submit-btn:hover {
+    background-color: #218838;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .attendance-container {
+        padding: 20px;
+    }
+
+    .attendance-table th,
+    .attendance-table td {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+
+/* SAVE ATTENDANCE STYLES */
+/* Container for the success message */
+.attendance-saved {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f4f8fb;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Title styling */
+.attendance-saved h2 {
+    font-size: 2rem;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+/* Paragraph styling */
+.attendance-saved p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Styling the list */
+.attendance-saved ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.attendance-saved ul li {
+    font-size: 1rem;
+    color: #333;
+    margin: 5px 0;
+}
+
+/* Button styling */
+.attendance-saved .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #219ebc;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.attendance-saved .btn:hover {
+    background-color: #219ebc;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .attendance-saved {
+        padding: 20px;
+    }
+
+    .attendance-saved h2 {
+        font-size: 1.8rem;
+    }
+
+    .attendance-saved p {
+        font-size: 0.9rem;
+    }
+
+    .attendance-saved .btn {
+        width: 100%;
+        padding: 10px 20px;
+    }
+}
+
+
+/* REPORTS STYLES */
+.report-box {
+    background-color: #219ebc; /* Teal color */
+}
+
+.report-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Container for the reports section */
+.view-container {
+    display: flex;
+    flex-direction: row;
+    gap: 45px;
+    margin: 40px;
+}
+
+/* SUBJECT WISE REPORTS STYLES  */
+/* Style for the subject reports section */
+.subject-reports {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Heading style */
+.subject-reports h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Table styling */
+.report-table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.report-table th, .report-table td {
+    padding: 10px 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.report-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Button styles */
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #219ebc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for buttons */
+.btn:hover {
+    background-color: #219ebc;
+}
+
+/* Additional styling for download buttons */
+.download-form {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.download-form label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.download-btn {
+    background-color: #28a745;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.download-btn:hover {
+    background-color: #218838;
+}
+
+/* Back button style */
+.back-btn {
+    background-color: #f0ad4e;
+}
+
+.back-btn:hover {
+    background-color: #ec971f;
+}
+
+/* Responsive Design: Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .report-table {
+        width: 90%;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .download-btn, .back-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .report-table {
+        width: 100%;
+    }
+}
+
+
+/* DAILY REPORTS STYLES */
+/* General styling for the daily reports section */
+.daily-reports {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Heading style */
+.daily-reports h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Date selection form styling */
+.date-form {
+    margin-bottom: 30px;
+}
+
+.date-form label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.date-form input[type="date"] {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    /* margin-right: 10px; */
+}
+/* Centering the form content */
+.date-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Center the button */
+.submit-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #219ebc;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #219ebc;
+}
+
+/* Responsive Design: Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .report-table {
+        width: 90%;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .report-table {
+        width: 100%;
+    }
+}
+
+
+/* LOW ATTENDANCE REPORTS STYLES */
+/* General styling for the low attendance reports section */
+.low-attendance-reports {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Heading style */
+.low-attendance-reports h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+/* Responsive Design: Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .report-table {
+        width: 90%;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .report-table {
+        width: 100%;
+    }
+}
+
+a{
+    text-decoration: none;
+}
+
+.back-button {
+    background-color: #219ebc; /* Green color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #219ebc; /* Darker green */
+}

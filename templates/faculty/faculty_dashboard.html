@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Faculty Dashboard{% endblock %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<h2>Welcome, {{ user.first_name }}!</h2>
+<!-- <p>You are logged in as a faculty member.</p> -->
+
+<div class="container">
+    <!-- Take Attendance Box -->
+    <a href="{% url 'take_attendance' %}" class="box faculty-action-box">
+        <div class="box-content">
+            <img src="{% static 'images/takeattendance.png' %}" alt="Take Attendance">
+            <p>Take Attendance</p>
+        </div>
+    </a>
+
+    <!-- View Attendance Reports Box -->
+    <a href="{% url 'reports' %}" class="box faculty-action-box">
+        <div class="box-content">
+            <img src="{% static 'images/reports.png' %}" alt="View Reports">
+            <p>View Attendance Reports</p>
+        </div>
+    </a>
+</div>
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

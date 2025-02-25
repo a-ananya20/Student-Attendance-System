@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Faculty Login{% endblock %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}"> 
+<div class="login-wrapper">
+<div class="login-container">
+    <h1>Faculty login</h1>
+    <form method="POST" action="/faculty/faculty_login/">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Login</button>
+    </form>
+    {% if form.errors %}
+    <div class="errors">
+        <p>Invalid credentials. Please try again.</p>
+    </div>
+    {% endif %}
+</div>
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}
